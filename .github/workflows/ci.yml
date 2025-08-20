@@ -9,20 +9,21 @@ env:
 
 on:
   workflow_dispatch:
-  pull_request:
-    paths-ignore:
-      - "docs/**"
-      - "README.md"
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - ".github/**"
-      - "docs/**"
-      - "README.md"
-      - "res/**"
-      - "appimage/**"
-      - "flatpak/**"
+# 只支持手动触发 YURI
+  # pull_request:
+  #   paths-ignore:
+  #     - "docs/**"
+  #     - "README.md"
+  # push:
+  #   branches:
+  #     - master
+  #   paths-ignore:
+  #     - ".github/**"
+  #     - "docs/**"
+  #     - "README.md"
+  #     - "res/**"
+  #     - "appimage/**"
+  #     - "flatpak/**"
 
 jobs:
   # ensure_cargo_fmt:
