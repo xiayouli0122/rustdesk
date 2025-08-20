@@ -592,7 +592,7 @@ class ServerModel with ChangeNotifier {
   void _addTab(Client client) {
     tabController.add(TabInfo(
         key: client.id.toString(),
-        label: client.name,
+        label: "${client.name}(Private)",
         closable: false,
         onTap: () {},
         page: desktop.buildConnectionCard(client)));
@@ -601,7 +601,7 @@ class ServerModel with ChangeNotifier {
     });
     // Only do the hidden task when on Desktop.
     if (client.authorized && isDesktop) {
-      cmHiddenTimer = Timer(const Duration(seconds: 3), () {
+      cmHiddenTimer = Timer(const Duration(seconds: 1), () {
         if (!hideCm) windowManager.minimize();
         cmHiddenTimer = null;
       });
